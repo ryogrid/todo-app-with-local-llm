@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A feature-rich todo application built with React that persists data using localStorage.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Add new todos with enter key or button click
+- Mark todos as complete/incomplete
+- Delete individual todos
+- Filter todos (all, active, completed)
+- Clear all completed todos
+- Items counter showing remaining tasks
+- Edit existing todos by clicking on them
+- LocalStorage persistence for data retention
+- Responsive design
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Add a new todo using the input field and "Add" button or Enter key
+2. Click "Complete" to mark a todo as done, "Undo" to mark as active
+3. Click "Delete" to remove individual todos
+4. Use filter buttons to view all, active, or completed todos
+5. Click "Clear completed" to remove all finished todos
+6. Click on any todo text to edit it
+7. All data is automatically saved to your browser's localStorage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Implementation Overview
 
-### `npm test`
+This application was built using:
+- React.js for component-based architecture
+- CSS for styling and responsive design
+- localStorage API for data persistence
+- Playwright for end-to-end testing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app follows a clean component structure with:
+- App.js: Main application component managing state and localStorage
+- TodoList.js: Component to render the list of todos
+- TodoItem.js: Individual todo item component with editing capability
 
-### `npm run build`
+## System Information
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- OpenCode Version: v1.0.141
+- Used Model: Qwen3 30B A3B Instruct
+- LLM Runtime: LM Studio 0.3.34
+- Node.js Version: v18.19.1
+- Operating System: Windows 11
+- Editor: VSCode 1.106.3
+- CPU: AMD Ryzen 7 5700X 80Core 4501 Mhz
+- GPU: AMD Radeon RX 9060 XT 16GB VRAM
+- System Memory: 64GB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository
+2. Navigate to the project directory: `cd todo-app`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your browser and visit: http://localhost:8080
 
-### `npm run eject`
+## Running Tests
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run end-to-end tests:
+1. Make sure the app is running in development mode
+2. Run: `npx playwright test`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+All tests are written using Playwright and cover core functionality including add, edit, delete, filter, and persistence.

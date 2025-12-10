@@ -2,37 +2,133 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  color: #333;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-container {
   display: flex;
-  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-text {
+  flex: 1;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.toggle-btn, .delete-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.no-todos {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 20px;
+}
+
+.todo-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.filter-buttons button {
+  padding: 5px 10px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.filter-buttons button.active {
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.clear-completed {
+  background-color: #6c757d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clear-completed:hover {
+  background-color: #5a6268;
+}
+
+.items-left {
+  flex: 1;
+  text-align: left;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
