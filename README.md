@@ -74,3 +74,6 @@ To run end-to-end tests:
 2. Run: `npx playwright test`
 
 All tests are written using Playwright and cover core functionality including add, edit, delete, filter, search, theme switching, statistics display, and persistence.
+
+## Config of LM Studio (note)
+<img width="322" height="659" alt="image" src="https://github.com/user-attachments/assets/300b1c6f-b764-4938-a9c0-03266edcc2da" />
