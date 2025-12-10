@@ -1,5 +1,362 @@
 .App {
   text-align: center;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.App.dark {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.todo-app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.App.dark h1 {
+  color: #e0e0e0;
+}
+
+.app-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-container {
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.App.dark .search-input {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+.theme-toggle, .stats-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.theme-btn, .stats-btn {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.App.dark .theme-btn, 
+.App.dark .stats-btn {
+  background-color: #6c757d;
+}
+
+.theme-btn:hover, .stats-btn:hover {
+  background-color: #0056b3;
+}
+
+.App.dark .theme-btn:hover, 
+.App.dark .stats-btn:hover {
+  background-color: #5a6268;
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.App.dark input[type="text"] {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.App.dark button {
+  background-color: #6c757d;
+}
+
+.App.dark button:hover {
+  background-color: #5a6268;
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  animation: fadeIn 0.3s ease-in;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.App.dark .todo-item {
+  border-bottom: 1px solid #444;
+}
+
+.todo-item.completed {
+  opacity: 0.7;
+}
+
+.todo-item.priority-high {
+  border-left: 4px solid #ff6b6b;
+}
+
+.todo-item.priority-medium {
+  border-left: 4px solid #feca57;
+}
+
+.todo-item.priority-low {
+  border-left: 4px solid #4ecdc4;
+}
+
+.todo-content {
+  flex: 1;
+}
+
+.todo-text {
+  cursor: pointer;
+  padding: 5px;
+  display: block;
+}
+
+.todo-meta {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.category-tag, .priority-tag, .due-date {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.App.dark .category-tag,
+.App.dark .priority-tag,
+.App.dark .due-date {
+  background-color: #555;
+  color: #e0e0e0;
+}
+
+.priority-high {
+  background-color: rgba(255, 107, 107, 0.1);
+}
+
+.priority-medium {
+  background-color: rgba(254, 202, 87, 0.1);
+}
+
+.priority-low {
+  background-color: rgba(78, 205, 196, 0.1);
+}
+
+.todo-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.toggle-btn, .delete-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.no-todos {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 20px;
+}
+
+.App.dark .no-todos {
+  color: #aaa;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.filter-buttons button {
+  padding: 5px 10px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.App.dark .filter-buttons button {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+.filter-buttons button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.clear-completed {
+  background-color: #6c757d;
+}
+
+.clear-completed:hover {
+  background-color: #5a6268;
+}
+
+.items-left {
+  flex: 1;
+  text-align: left;
+}
+
+.stats-panel {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(0, 123, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid #007bff;
+}
+
+.App.dark .stats-panel {
+  background-color: rgba(0, 123, 255, 0.2);
+  border: 1px solid #007bff;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.stat-card {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.App.dark .stat-card {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.stat-card.completed {
+  border-top: 3px solid #28a745;
+}
+
+.stat-card.active {
+  border-top: 3px solid #ffc107;
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stat-label {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #666;
+}
+
+.App.dark .stat-label {
+  color: #aaa;
+}
+
+.category-stats {
+  margin-top: 10px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.App.dark .category-item {
+  border-bottom: 1px solid #444;
+}
+
+.category-count {
+  font-weight: bold;
 }
 
 .todo-app {

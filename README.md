@@ -1,18 +1,26 @@
-# Todo App
+# Advanced Todo App
 
 A feature-rich todo application built with React that persists data using localStorage.
 
 ## Features
 
-- Add new todos with enter key or button click
-- Mark todos as complete/incomplete
-- Delete individual todos
-- Filter todos (all, active, completed)
-- Clear all completed todos
-- Items counter showing remaining tasks
-- Edit existing todos by clicking on them
-- LocalStorage persistence for data retention
-- Responsive design
+- **Core Functionality**:
+  - Add new todos with enter key or button click
+  - Mark todos as complete/incomplete
+  - Delete individual todos
+  - Filter todos (all, active, completed)
+  - Clear all completed todos
+  - Items counter showing remaining tasks
+
+- **Advanced Features**:
+  - Categories/tags for organizing todos (work, personal, shopping, health, learning)
+  - Priority levels (high, medium, low) with visual indicators
+  - Due dates for tasks
+  - Search functionality to filter todos by text or category
+  - Dark/light theme switching
+  - Statistics dashboard showing task breakdown
+  - LocalStorage persistence for data retention
+  - Responsive design
 
 ## Usage
 
@@ -21,8 +29,10 @@ A feature-rich todo application built with React that persists data using localS
 3. Click "Delete" to remove individual todos
 4. Use filter buttons to view all, active, or completed todos
 5. Click "Clear completed" to remove all finished todos
-6. Click on any todo text to edit it
-7. All data is automatically saved to your browser's localStorage
+6. Use the search bar to find specific todos by text or category
+7. Toggle between light and dark themes using the theme button
+8. Click "Show Stats" to display task statistics and breakdowns
+9. All data is automatically saved to your browser's localStorage
 
 ## Implementation Overview
 
@@ -33,9 +43,9 @@ This application was built using:
 - Playwright for end-to-end testing
 
 The app follows a clean component structure with:
-- App.js: Main application component managing state and localStorage
+- App.js: Main application component managing state, theme, and localStorage
 - TodoList.js: Component to render the list of todos
-- TodoItem.js: Individual todo item component with editing capability
+- TodoItem.js: Individual todo item component with editing capability  
 
 ## System Information
 
@@ -63,4 +73,4 @@ To run end-to-end tests:
 1. Make sure the app is running in development mode
 2. Run: `npx playwright test`
 
-All tests are written using Playwright and cover core functionality including add, edit, delete, filter, and persistence.
+All tests are written using Playwright and cover core functionality including add, edit, delete, filter, search, theme switching, statistics display, and persistence.
